@@ -1,0 +1,113 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+  }
+  :root {
+  --gris: #686963;
+  --morning-blue: #8aa29e;
+  --black-coral: #3d5467;
+  --silver-chalice: #a9aca9; 
+  --granite-gray:#6c6061;
+  --independence: #525b76;  
+  }
+body {
+    font-family: "Roboto", sans-serif;
+  }
+  
+
+/* ---------------------- para emergente de editarRegistro ------------------- */
+
+
+label, .foto {
+  margin-top: 25px;    
+}
+.fechaNacimiento{
+  margin-top:10px;
+}
+
+.foto {
+  text-align: center;
+}
+.nombre, .nombre-usuario{
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.boton3 {
+  width: 80%;
+  padding: 10px;
+  color:var(--black-coral);
+  border: none;
+  outline: none;
+  background-color:var(--silver-chalice);
+border-radius: 10px;
+text-align: center;
+}
+.reg-reset {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+ 
+}
+.register , .reset {
+margin-top: 15px;
+  background-color: var(--granite-gray);
+  color:white;
+  width:50%;
+  border-radius: 20px;
+  height: 40px;
+  width: 130px;
+  margin: 15px;  
+  border: none;
+}
+.register:hover , .reset:hover, .envio:hover{
+  background-color: #0022AA;
+  
+}
+/*----------------------------------------------------------------------*/
+  /* -------------------------main ---------------------*/
+  main {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box; 
+   padding-bottom:30px;
+  } 
+  .container3 {
+    padding-top: 30px;
+  }
+  
+  .botonVolver {
+    width: 10%;
+    height: 30px;
+    border-radius: 10px;
+    
+  }
+  
+
+  
+  /*  tablets    */
+  @media (min-width:426px){
+   
+    
+  }
+  
+  /*   notebook   */
+  @media (min-width:769px){
+
+   
+   
+    
+  }
+  @media (min-width: 1200px){
+   
+  }
+  
+  

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/listadoFotos.css" />
+
+</head>
+
+<body class="body">
+
+
+     <!--------------------------------- header --------------------------------------------------------------->
+     <%- include('partials/headerPages.ejs') %> 
+
+  
+  
+
+  </header>
+
+<!-----------------------------------------------------parte principal de lista de fotos --------------------------------------------------------->
+<section class="container3">
+    
+
+
+  <p class="encabezado">Listado de fallas</p>
+<table class="tablaUsuarios" >
+   
+    <tr>
+      <th class="titulos">Marca</th>
+      <th class="titulos">Modelo</th>
+      <th class="titulos">Falla</th>
+      <th class="titulos">Solución</th>
+      <th class="titulos">Fecha</th>
+      <th class="titulos">Autor</th>
+    </tr>
+    <tr class="filas">
+        <% for(let i=0; i < fotos.length; i++) {%>
+       
+      <td class="fila" data-label="Marca"><%=fotos[i].marca %></td>
+      <td class="fila" data-label="Modelo"><%= fotos[i].modelo %></td>
+      <td class="fila" data-label="Falla"><%= fotos[i].falla %></td>
+      <td class="fila" data-label="Solución"><%= fotos[i].solucion %></td>
+      <td class="fila" data-label="Fecha"><%= fotos[i].fecha %></td>
+      <td class="fila" data-label="Autor"><%= fotos[i].email %></td>
+    </tr>
+    <tr>
+      <td colspan="6"><hr></td>
+  </tr>
+   
+    <%}%>
+   
+</table>
+<div class="container2">
+  <div class="btn-volver">
+     <button class="botonAgregar" type="reset"><a  class="botones"  href="/creacionFoto">Agregar incidencia</a></button>     
+    </div>
+    <div class="btn-volver">
+       <button class="botonVolver" type="reset"><a  class="botones" href="/logout">Volver</a></button>     
+    </div>
+  </div>
+
+</section>
+
+ <!--------------------------------- footer --------------------------------------------------------------->
+ <%- include('partials/footer.ejs') %> 
+
+<script  defer src="/js/borrarFoto.js"></script>
+
+</body>
+</html>

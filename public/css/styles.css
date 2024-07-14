@@ -1,0 +1,81 @@
+
+
+
+header{
+  background-color: rgba(192, 188, 188, 0.4);
+}
+.icono{
+  margin-right: 25px;
+}
+.container {
+  margin: auto;
+}
+
+.text-small {
+  font-size: 85%;
+}
+.etiquetasFooter {
+  margin-right: 25px;
+ 
+}
+.foto-principal {
+  justify-content: center !important;
+}
+
+.video-centrado {
+  display: block;
+  margin: 0 auto;
+  margin-top: 90px;
+  max-width: 95%;
+  height: auto;
+}
+
+
+.copyrigth {
+  margin-left: 15px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(192, 188, 188, 0.4);
+}
+.description {
+  text-align: justify;
+  list-style: none;
+}
+.titulo-central{
+  text-align: center;
+}
+.text-dark {
+  
+  &:hover {
+    font-weight: 600;
+   
+}
+}
+.custom-img-container {
+  width: 100%;
+  height: 400px; /* Establece la altura fija deseada */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el contenedor */
+}
+
+.custom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor manteniendo la relación de aspecto */
+}
+
+
+@media (min-width: 425px){
+  .titulo-header { 
+    margin-right: 40px !important;
+  }
+ 
+}
+@media (max-width: 768px) {
+  .video-centrado {
+    width: 100%;
+    height: auto;
+  }
+}

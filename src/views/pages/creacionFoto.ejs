@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+    
+    <link rel="stylesheet" href="/css/editarFoto.css" />
+   
+</head>
+
+<body class="body">
+    <main>
+        <div>
+            <h2 class="titulo-principal">Agregar Incidencia</h2>
+        </div>
+        <section>
+            <!-- forEach PARA MOSTRAR MSG DE ERRORES -->
+            <%if (locals.errors) {
+                errors.forEach(error => { %>
+                    <p class="errores"><%= error.msg %></p>
+            <%	})
+                } %>
+            <form action="/creacionFoto" method="POST" class=""    id="form-crear" onsubmit="return validarFormulario()">
+
+                
+                <!-- CAJA FORMULARIO -->
+                <div class="caja-formulario">
+                <!-- MARCA-->
+                <div>
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" value="" class="form-control" id="marca" placeholder="Marca"
+                         />
+                </div>
+                <!-- MODELO -->
+                <div >
+                    <label for="modelo">Modelo:</label>
+                    <input outline="none" type="text" name="modelo" value=""  id="modelo" class="form-control" placeholder="Modelo"/>
+                </div>
+               
+                
+                <!-- FALLA -->
+                <div>
+                    <label for="falla">Falla:</label>
+                    <textarea name="falla" value="" placeholder="Falla" class="form-control" id="falla" /></textarea>
+                </div>
+
+                <!-- SOLUCION --> 
+                <div>             
+                    <label for="solucion">Solución:</label>
+                    <textarea  name="solucion" class="form-control" id="solucion" placeholder="Solución"/></textarea>
+                </div>
+
+                <!-- FECHA -->
+                <div>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" name="fecha" class="form-control" id="fecha" placeholder="Fecha"
+                         />
+                </div>
+                </div>
+
+                <!-- CAJA BOTONES -->
+                <div class="caja-botones">
+                <!-- BOTON CARGAR FOTO -->
+                <div>
+                    <input class="btn btn-outline-secondary" type="submit" value="Cargar" placeholder="Cargar" id="btnCargar" onclick="convertirFecha()">
+                </div>
+                <!-- BOTON RESETEAR FORMULARIO -->
+                <div>
+                    <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer" value="Restablcer">
+                </div>
+                <!-- BOTON VOLVER PAGINA ANTERIOR -->
+                            <div>
+                                <input class="btn btn-outline-secondary" type="button" placeholder="Volver"
+                                    value="Volver" id="btnVolver"  />
+                            </div>
+            </div>
+            </form>
+        
+        </section>
+    </main>
+    <!--------------------------------- footer --------------------------------------------------------------->
+    <%- include('partials/footer.ejs') %> 
+
+
+    <script  defer src="js/creacionFoto.js"></script>
+    <script>
+
+        function convertirFecha() {
+    const fechaInput = document.getElementById('fechaInput').value;
+    
+    // Verificar si la fecha tiene el formato yyyy-mm-dd
+    if (/^\d{4}-\d{2}-\d{2}$/.test(fechaInput)) {
+        const partes = fechaInput.split('-');
+        const fechaConvertida = partes[0] + partes[1] + partes[2]; // Concatenar las partes de la fecha
+        console.log(fechaConvertida); // Mostrar la fecha convertida en la consola
+    } else {
+        console.log('Formato de fecha inválido. Utiliza yyyy-mm-dd');
+    }
+    }
+    function validarFormulario() {
+        //e.preventDefault(); // Prevenir el envío del formulario
+
+        let marca = document.querySelector('input[name="marca"]').value;
+        let modelo = document.querySelector('input[name="modelo"]').value;
+        let falla = document.querySelector('textarea[name="falla"]').value;
+        let solucion = document.querySelector('textarea[name="solucion"]').value;
+        let fecha = document.querySelector('input[name="fecha"]').value;
+       
+
+        if (marca.trim() === '' || modelo.trim() === '' || falla.trim() === '' || solucion.trim() === '' || fecha.trim() === '') {
+            alert('Por favor completa todos los campos');
+            return false; // Evita que se envíe el formulario
+        }
+       
+        return true; // Permite enviar el formulario si todos los campos están completos
+    }
+
+</script>
+
+    
+</body>
+
+
+</html>

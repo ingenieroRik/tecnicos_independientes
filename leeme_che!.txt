@@ -1,0 +1,9 @@
+para ejecutar : npm start
+
+para ver en el navegador : http://localhost:3042/api/fotos
+
+
+en render : https://fotos-juli.onrender.com/api/fotos
+
+
+CARGAR LAS VARIABLES DE ENTORNO.

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/editarFoto.css" />
+   
+
+</head>
+
+<body>
+    <main>
+        <div>
+            <h2 class="titulo-principal">Editing: </h2>
+        </div>
+        <section>
+            <!-- forEach PARA MOSTRAR MSG DE ERRORES -->
+            <%if (locals.errors) { errors.forEach(error=> { %>
+                <p class="errores" style="color: blue">
+                    <%= error.msg %>
+                </p>
+                <% }) } %> 
+            <!-- LISTA VALIDACIONES FRONT -->
+            <div class="errores">
+                <ul id="ul"> </ul>
+            </div>
+            <div class="form-imagen">
+
+                <form action="/edicionFoto/<%= foto.id %>?_method=PUT"  id="form" method="POST" enctype="multipart/form-data">
+                    <!-- CAJA FORMULARIO -->
+                    <div class="caja-formulario">
+                    <!-- NUMERO DE ID -->
+                
+                    <!-- NOMBRE  -->
+                        <div>
+                            <label for="">Name:</label>
+                            <input type="text" name="name" class="form-control" id="name" value="<%= foto.name %>" placeholder="Name" />
+                        </div>
+                        <!-- ARTIST -->
+                        <div >
+                            <label for="">Artist:</label>
+                            <input outline="none" type="text" name="artist" class="form-control" id="artist"
+                                placeholder="Artist" value="<%= foto.artist %>" required />
+                        </div>
+                    
+
+
+                    <!-- BANDA -->
+                        <div>
+                            <label for="">Band:</label>
+                            <input type="text" name="band" class="form-control" id="band" value="<%= foto.band%>" required />
+                        </div>
+                    <!-- LUGAR -->
+                        <div>
+                            <label for="">Venue:</label>
+                            <input type="text" name="venue" class="form-control" id="venue" value="<%= foto.venue %>" required />
+                        </div>
+                    <!-- AÑO -->
+                        <div>
+                            <label for="">Year:</label>
+                            <input type="text" name="year" class="form-control" id="year" value="<%= foto.year %>"/>
+                        </div>
+
+                         <!-- IMAGEN -->
+
+
+                        <div>
+                            <label for="imagenUsuario">Photo:</label>
+                       
+                            <input type="file" name="imagen" class="form-control subir-foto" id="imgFoto" >
+                            
+                        </div>   
+
+                    
+                    </div>
+                    <!-- CAJA BOTONES -->
+                    <div class="caja-botones">
+                    <!-- BOTON MODIFICAR ARTICULO -->
+                    <div class="espacio-botones">
+                        <button class="btn btn-outline-secondary" id="btnCargar" type="submit">Modify</button>
+                    </div>
+                    <!-- BOTON RESETEAR FORMULARIO -->
+                    <div class="espacio-botones">
+                        <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer" value="Restart">
+                    </div>
+                
+                
+                
+                    <!-- BOTON VOLVER PAGINA ANTERIOR -->
+                   
+
+                    <div>
+                        <input class="btn btn-outline-secondary" type="button" placeholder="Volver"
+                            value="Back" id="btnVolver"  />
+                    </div>
+                </form> 
+
+
+                    <!-- BOTON ELIMINAR ARTICULO --> 
+                    <div class="boton-eliminar">
+                        <form action="/delete/<%= foto.id %>?_method=DELETE" method="POST">
+                            <button type="submit" id="btnBorrar" class="btn btn-outline-secondary">Delete</button>
+                        </form>
+                    </div>
+
+                    
+
+            </div>
+
+            <!-- foto -->
+            <div class="caja-imagenes">
+            <div class="imagen-art">
+                <label>Photo image:</label>
+                <img src="/images/<%= foto.img%>" alt="FOTO DE PRUEBA">
+            </div>
+            
+    </div>
+        </section>
+    </main>
+    <script src="js/creacionFoto.js"></script>
+</body>
+
+</html>

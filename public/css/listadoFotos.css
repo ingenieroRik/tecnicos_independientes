@@ -1,0 +1,135 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+  }
+
+  :root {
+  --gris: #686963;
+  --morning-blue: #8aa29e;
+  --black-coral: #3d5467;
+  --silver-chalice: #a9aca9; 
+  --granite-gray:#6c6061;
+  --independence: #525b76;  
+  }
+body {
+    font-family: "Roboto", sans-serif;
+  }  
+  .btn-volver{
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    height: 30px;
+    text-align: center;
+  }
+    .container3 {
+      margin: auto;
+      width: 100%;
+      margin-top: 150px;  
+    }
+    .encabezado {
+      height: 40px;
+      width: 90%;
+      margin: auto;
+      background-color: black;
+      color: white;
+      font-size: 24px;
+      border-radius: 7px;
+      text-align: center;
+    }
+    .tablaUsuarios {
+      width: 90%;
+      background-color: rgba(192, 188, 188, 0.4); 
+      border-radius: 7px;
+      margin: auto;
+      border: solid 2px var(--granite-gray) ;
+    }
+    .fila{
+      text-align: center;
+      padding-top: 15px;
+    }
+    .botones{
+      text-decoration: none !important;
+      color: black !important;    
+    }
+    .botonVolver {
+      width: 20%;
+      height: 30px;
+      border-radius: 10px;
+    }
+    .botonAgregar{
+      text-align: center !important;
+      width: 20%;
+      height: 30px;
+      border-radius: 10px;
+      background-color: lightgreen;
+    } 
+    #volver{
+      color:var(--black-coral);
+    }
+    .titulos {
+      text-align: center;
+      border-style:solid;
+      border-width: 1px;
+      border-color: black;
+      padding: 10px;
+    }
+    .datosUsuario {
+      font-size: 20px;
+    }   
+    /*  tablets    */
+    @media (min-width:426px){
+     
+    }
+    
+    /*   notebook   */
+    @media (min-width:769px){
+      .botonVolver {
+        width: 10%;
+      }
+    }
+    @media (min-width: 1200px){
+     
+    }
+    
+    @media (max-width: 520px) {
+      .tablaUsuarios {
+        width: 100%;
+        overflow-x: auto;
+      }
+      .tablaUsuarios th,
+      .tablaUsuarios td {
+        padding: 5px;
+        font-size: 12px;
+      }
+      .tablaUsuarios th {
+        display: none; /* Ocultar los títulos en dispositivos móviles */
+      }
+      .tablaUsuarios tr {
+        display: block;
+        border-bottom: 1px solid var(--granite-gray);
+      }
+      .tablaUsuarios td {
+        display: block;
+        text-align: left;
+      }
+      .tablaUsuarios td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
+      .botones{
+        font-size: 12px;
+      }
+      .botonAgregar, .botonVolver{
+        width: 40%;
+      }
+      .container3{
+        margin-top: 20px;
+      }
+      .footer, .header{
+        position: relative !important;
+      }
+    }

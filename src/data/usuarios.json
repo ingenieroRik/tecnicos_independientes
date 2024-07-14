@@ -1,0 +1,20 @@
+[
+ {
+  "id": 1,
+  "nombre": "Ricardo",
+  "email": "ricardo@hotmail.com",
+  "clave": "1234"
+ },
+ {
+  "id": 2,
+  "nombre": "Mario",
+  "email": "mario@hotmail.com",
+  "clave": "1234"
+ },
+ {
+  "id": 3,
+  "nombre": "Jorge",
+  "email": "Jorge@hotmail.com",
+  "clave": "1234"
+ }
+]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+    
+    <link href="/css/login.css" rel="stylesheet">
+  
+    <script defer src="/js/limpiarInputs.js"></script>
+    
+  </head>
+
+  <body class="text-center">
+
+    
+     <!--------------------------------- header --------------------------------------------------------------->
+   <%- include('partials/headerPages.ejs') %> 
+    
+    <main class="form-signin">
+        <form action="/regUsuario"  class="form-login"  method="POST">
+
+        <img class="mb-4" src="/images/imp8.png" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Ingrese sus datos.</h1>
+
+
+
+        <div class="form-floating">
+          <input type="text" class="form-control"  id="nombre"  for="nombre"  name="nombre"  placeholder="Nombre" value="<%= locals.oldData ? oldData.nombre : null %>">
+          <label for="floatingPassword">Nombre</label>
+         
+          <%  if (locals.errors && errors.nombre) {  %>       
+            <div class="error-text">
+                <p class="" ><%= errors.nombre.msg %> </p>
+            </div>
+            <% } %> 
+
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control"  id="email" for="email" name="email" placeholder="email" value="<%= locals.oldData ? oldData.email : null %>">
+          <label for="floatingInput">Email</label>
+
+          <%  if (locals.errors && errors.email) {  %>         
+            <div class="error-text">
+                <p class="" ><%= errors.email.msg %> </p>
+            </div>
+            <% } %> 
+
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control"  id="clave"  for="clave"  name="clave"  placeholder="Clave">
+          <label for="floatingPassword">Clave</label>
+
+          <%  if (locals.errors && errors.clave) {  %>            
+            <div class="error-text">
+                <p class="" ><%= errors.clave.msg %> </p>
+            </div>
+            <% } %> 
+
+          <div class="error-text" ></div>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control"  id="confirmarClave"  for="confirmarClave"  
+                   name="confirmarClave"  placeholder="Confirmar clave">
+          <label for="floatingPassword">Confirmar calve</label>
+
+          <%  if (locals.errors && errors.confirmarClave) {  %>            
+            <div class="error-text">
+                <p class="error-clave" ><%= errors.confirmarClave.msg %> </p>
+            </div>
+            <% } %> 
+
+        </div>
+       
+       
+        <button class="w-100 btn btn-lg btn-primary" id="btn-envio-login" value="sing-in" type="submit">Guardar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
+
+      </form>
+     
+  </main>
+
+   <!--------------------------------- footer --------------------------------------------------------------->
+   <%- include('partials/footer.ejs') %> 
+
+   <script defer src="/js/verificarInputs.js"></script>
+  </body>
+</html>

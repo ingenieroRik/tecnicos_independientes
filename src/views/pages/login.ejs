@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+   
+    <link href="/css/login.css" rel="stylesheet">
+  
+    <script defer src="/js/inicioSesion.js"></script>
+    <script defer src="/js/limpiarInputs.js"></script>
+    
+  </head>
+
+  <body class="text-center">
+
+     <!--------------------------------- header --------------------------------------------------------------->
+   <%- include('partials/headerPages.ejs') %> 
+       
+    
+    <main class="form-signin">
+        <form action="/login"  class="form-login"  method="POST">
+
+        <img class="mb-4" src="/images/imp8.png" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Registrese, por favor.</h1>
+
+        <div class="form-floating">
+          <input type="email" class="form-control"  id="email" for="email" name="email" placeholder="email">
+          <label for="floatingInput">Email</label>
+          <div class="error-text"></div>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control"  id="clave"  for="clave"  name="clave"  placeholder="Clave">
+          <label for="floatingPassword">Clave</label>
+                  <div class="error-text" >
+                   
+                  </div>
+        </div>
+
+        <% if (error) { %>
+          <p  style="color: red;"><%= error %></p>
+        <% } %>
+        <button class="w-100 btn btn-lg btn-primary" id="btn-envio-login" value="sing-in" type="submit">Ingresar</button>
+
+        <div class="olvido">
+          <p href="" class=""></p> <a class=""   href="/olvidoClave">Has olvidado tu contraseña?</a>
+        </div>
+
+        <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
+
+
+        <a type="button" class="btn btn-secondary me-2" href="/verFormulario">No estoy registrado</a> 
+
+      </form>
+     
+
+  </main>
+
+   <!--------------------------------- footer --------------------------------------------------------------->
+   <%- include('partials/footer.ejs') %> 
+
+   
+    
+  </body>
+</html>
