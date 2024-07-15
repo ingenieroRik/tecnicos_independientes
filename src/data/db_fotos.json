@@ -1,0 +1,18 @@
+[
+ {
+  "id": 1,
+  "marca": "Ricoh",
+  "modelo": "MP7500",
+  "falla": "SC542/545",
+  "solucion": "limpieza de termistores",
+  "fecha": 2014
+ },
+ {
+  "id": 2,
+  "marca": "Ricoh",
+  "modelo": "MP7500",
+  "falla": "traba en el registro, marca J08/J012",
+  "solucion": "revisar mylard de registro (B1402675) que no este gastado, que no pierda revelador la unidad de revelado",
+  "fecha": 2015
+ }
+]

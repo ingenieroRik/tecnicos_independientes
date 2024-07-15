@@ -19,11 +19,12 @@
     width: 100%;
     background-color: rgba(192, 188, 188, 0.4);
     color: rgb(15, 13, 13);
-    text-align:left;
+    text-align:center;
     padding: 10px 0;
   }
   .titulo-footer{
     margin-left: 10px;
+    margin-top: 12px;
   }
 
   @media (min-width: 425px){

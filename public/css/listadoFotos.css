@@ -58,6 +58,7 @@ body {
       width: 20%;
       height: 30px;
       border-radius: 10px;
+      background-color: #f0c593;
     }
     .botonAgregar{
       text-align: center !important;
@@ -66,6 +67,14 @@ body {
       border-radius: 10px;
       background-color: lightgreen;
     } 
+    .botonExportar{
+
+      text-align: center !important;
+       width: 20%;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #6592bd;
+    }
     #volver{
       color:var(--black-coral);
     }
@@ -123,7 +132,7 @@ body {
       .botones{
         font-size: 12px;
       }
-      .botonAgregar, .botonVolver{
+      .botonAgregar, .botonVolver, .botonExportar{
         width: 40%;
       }
       .container3{
