@@ -6,13 +6,7 @@
    
      <link rel="stylesheet" href="/css/login.css" />
   
-    <script  src="https://www.google.com/recaptcha/api.js" async defer></script>  
     
-    <script>
-        function enviar(token){
-            document.getElementById("olvido-form").submit();
-        }
-    </script>
 
     <title>Técnicos Independientes</title>
    
@@ -27,13 +21,13 @@
 
     <main class="form-signin">
 
-        <label>Ingrese su email, le enviaremos un correo para recuparar su contraseña.</label>
-        <form action="/enviarMail" method="POST"  id="olvido-form"  class="form-login">
+        
+        <div class="form-login">
 
             <div class="form-floating">
 
                 <input type="email" value="" name="email" class="form-control" placeholder=""
-                                autofocus required> 
+                                hidden> 
                         
                                 
                                 <%  if (locals.errors && errors.pieError) {  %> 
@@ -52,15 +46,10 @@
                                 <% } %>     
                         
             </div>       
-                <button class="btn-envio-mail btn-lg btn-primary" type="submit">Enviar</button>
-
-            
-                <button class="g-recaptcha" data-sitekey="6Lfe85slAAAAAP2G5Y51LvWFEBeUy_cKGqU5zV92" 
-                data-callback="enviar" ></button>            
-
+               
             
 
-        </form>
+        </div>
 
         
             <button class="btn-secondary  btn-lg" type="submit"><a href="/" class="btn-volver">Volver</a></button>     

@@ -258,6 +258,22 @@ const mainControllers = {
       const nombre = req.body.nombre;
       const website = process.env.WEBSITE;
 
+      //hay que chequear si existe este mail
+      const usuarioOlvido = await db.Usuarios.findOne({
+        where: { email: email },
+        raw: true,
+      });
+      if (usuarioOlvido == null) {
+      
+        //console.log("el usuario no existe")
+  
+        return res.render("pages/formOlvidoClave.ejs"
+        , {
+          errors:{ pieError: { msg: 'El usuario: '+ email + "  , no esta registrado."}} 
+          }
+        );
+      }
+
       apiInstance.setApiKey(
         brevo.TransactionalEmailsApiApiKeys.apiKey,
         process.env.APIKEY 
@@ -271,7 +287,9 @@ const mainControllers = {
             { email: email, name: nombre },
           
           ];
-          sendSmtpEmail.htmlContent = `<html><body><h1>Hola ${email}</h1><p>Esta es una notificación de su pedido</p><button>Click me</button><a href=${website}>Go to my website</a></body></html>`;
+          sendSmtpEmail.htmlContent = `<html><body><h1>Hola ${email}</h1><p>Esta es una notificación de su pedido de restablecimiento de clave, 
+                                     sus credenciales fueron eliminadas, vuelva a registrarse con su correo y clave, por favor.
+                                     </p><button>Click</button><a href=${website}>Go to my website</a></body></html>`;
           sendSmtpEmail.sender = {
             name: "Técnicos Independientes",
             email: "ingeniero_rik@hotmail.com",
@@ -279,9 +297,24 @@ const mainControllers = {
 
           const result = await apiInstance.sendTransacEmail(sendSmtpEmail);
 
-          console.log(result);
+          //console.log(result);
 
-          return res.render("pages/formOlvidoClave.ejs", {
+          // aqui debemos hacer algo con este usuario
+          // lo vamos a borrar para que se vuelva a registrar
+
+          try {
+           
+            await db.Usuarios.destroy({ where: { email: email }, force: true });
+            
+          } catch (error) {
+            return res.render("pages/formOlvidoClave.ejs", {
+            
+              errors: { pieError: { msg: "No se pudo restablecer contraseña" } },
+            })
+          }
+
+
+          return res.render("pages/formMailEnviado.ejs", {
           
             errors: { pieForm: { msg: "El mail se envió correctamente" } },
           })
