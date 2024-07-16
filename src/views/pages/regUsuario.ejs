@@ -46,8 +46,8 @@
 
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control"  id="clave"  for="clave"  name="clave"  placeholder="Clave">
-          <label for="floatingPassword">Clave</label>
+          <input type="password" class="form-control"  id="clave"  for="clave"  name="clave"  placeholder="Clave" minlength="8" required>
+          <label for="floatingPassword">Clave - Mínimo 8 caracteres</label>
 
           <%  if (locals.errors && errors.clave) {  %>            
             <div class="error-text">
@@ -59,8 +59,8 @@
         </div>
         <div class="form-floating">
           <input type="password" class="form-control"  id="confirmarClave"  for="confirmarClave"  
-                   name="confirmarClave"  placeholder="Confirmar clave">
-          <label for="floatingPassword">Confirmar calve</label>
+                   name="confirmarClave"  placeholder="Confirmar clave" minlength="8" required>>
+          <label for="floatingPassword">Confirmar calve - Mínimo 8 caracteres</label>
 
           <%  if (locals.errors && errors.confirmarClave) {  %>            
             <div class="error-text">

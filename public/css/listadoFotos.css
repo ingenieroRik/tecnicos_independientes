@@ -17,6 +17,9 @@
 body {
     font-family: "Roboto", sans-serif;
   }  
+  .footer{
+    position: relative;
+  }
   .btn-volver{
     display: block;
     margin-bottom: 20px;
@@ -26,6 +29,7 @@ body {
   }
     .container3 {
       margin: auto;
+      margin-bottom: 50px;
       width: 100%;
       margin-top: 150px;  
     }
@@ -88,9 +92,11 @@ body {
     .datosUsuario {
       font-size: 20px;
     }   
-    /*  tablets    */
-    @media (min-width:426px){
-     
+    /*      */
+    @media (max-width:1440px){
+     .footer{
+      position: absolute;
+     }
     }
     
     /*   notebook   */
@@ -138,7 +144,7 @@ body {
       .container3{
         margin-top: 20px;
       }
-      .footer, .header{
+      .header, .footer{
         position: relative !important;
       }
     }
