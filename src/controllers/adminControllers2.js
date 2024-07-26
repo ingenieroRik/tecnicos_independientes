@@ -1,3 +1,4 @@
+
 const path = require("path");
 const { json } = require("express");
 
@@ -33,15 +34,14 @@ const adminControllers = {
         fotos: fallasTodas,
       });
     } catch (error) {
-      return res.render("pages/login.ejs", { error: "No se puede conectar con la base de datos" });
-      //return res.status(500).json({ message: error.message });
+      return res.status(500).json({ message: error.message });
     }
     },
 
 
 /* ********************************************************************************************************************************** */
     edicionFalla: (req, res) => {
-        try {
+     
       const id = req.params.id;
       //console.log(req.params);
       console.log(id);
@@ -50,14 +50,10 @@ const adminControllers = {
       });
   
       res.render("./pages/edicionFoto.ejs", { foto: foto });
-    } catch (error) {
-         return res.render("pages/login.ejs", { error: "No se puede conectar con la base de datos" });
-        //return res.status(500).json({ message: error.message });
-    }
+  
     },
 /* ********************************************************************************************************************************* */
       procesoEdicion: (req, res) => {
-            try {
       //const db_fotos = JSON.parse(fs.readFileSync(fotosFilePath, "utf-8"));
       const id = req.params.id;
       const fotoIndex = db_fotos.findIndex((foto) => foto.id == id);
@@ -77,10 +73,6 @@ const adminControllers = {
       } else {
           res.status(404).send("Foto no encontrada");
       }
-    } catch (error) {
-        return res.render("pages/login.ejs", { error: "No se puede conectar con la base de datos" });
-        //return res.status(500).json({ message: error.message });
-    }
     },
 
 /* *************************************************************************************************************************************** */
@@ -167,8 +159,7 @@ const adminControllers = {
           old: req.body })
         }
       } catch (error) {
-        return res.render("pages/login.ejs", { error: "No se puede conectar con la base de datos" });
-        //return res.status(500).json({ message: error.message });
+        return res.status(500).json({ message: error.message });
       }
       },
 

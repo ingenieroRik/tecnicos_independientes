@@ -1,8 +1,8 @@
 const express = require ("express");
 const router = express.Router();
 
-const mainControllers = require ("../controllers/mainController.js");
-const adminControllers = require("../controllers/adminControllers");
+const mainControllers = require ("../controllers/mainControllers.js");
+const adminControllers = require("../controllers/adminControllers.js");
 
 const {  body } = require('express-validator');// para validaciones <---- validacionRegistro
 

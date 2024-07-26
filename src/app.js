@@ -44,6 +44,7 @@ app.use (mainRoutes);
 
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
+
  var mysql = require('mysql'); //<----- npm install mysql 
 
 var conexion = mysql.createConnection({
@@ -52,16 +53,31 @@ var conexion = mysql.createConnection({
     user: process.env.USER_BD,
     password: process.env.PASSWORD});
   
-    conexion.connect (function (error){
-        if (error){
-            throw error;
-        } else { console.log("Conecto con éxito la base de datos remota")}
-    });
-    conexion.end();
+    try {
+        conexion.connect(function (error) {
+            if (error) {
+                console.error("Error conectando a la base de datos:", error);
+                // Handle the connection error here
+            } else {
+                console.log("Conecto con éxito la base de datos remota");
+                // Perform any database operations here
+                conexion.end();
+            }
+        });
+    
+        conexion.on('error', function (err) {
+            console.error("Error de conexión a la base de datos:", err);
+            // Handle the error or attempt to reconnect
+        });
+    } catch (error) {
+        console.error("Error de conexión a la base de datos:", error);
+        // Handle the connection error here
+    }
+
 /*****************************************************************************/
 /*************************probamos conexion  con la base de datos local *********************/
  
-/* 
+/*
 var mysql2 = require('mysql2'); //<----- npm install mysql2 
 
 var conexion = mysql2.createConnection({
@@ -76,7 +92,7 @@ var conexion = mysql2.createConnection({
         } else { console.log("Conecto con éxito la base de Datos local")}
     });
     conexion.end(); 
-    */
+   */ 
 /***************************************************************************** */
 
 // ponemos a escuchar el servidor
