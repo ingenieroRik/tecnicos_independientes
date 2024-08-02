@@ -26,11 +26,15 @@
     margin-left: 10px;
     margin-top: 12px;
   }
- @media (min-width: 768px){
+ @media (min-width: 1024px){
+     .footer {
+         position: relative !important;
+     }
+ }
    
   @media (min-width: 425px){
     .titulo-header { 
       margin-right: 40px !important;
     }
    
-  }
+
