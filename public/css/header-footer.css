@@ -27,9 +27,7 @@
     margin-top: 12px;
   }
  @media (min-width: 1024px){
-     .footer {
-         position: relative !important;
-     }
+    
  }
    
   @media (min-width: 425px){
