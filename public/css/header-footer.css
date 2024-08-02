@@ -26,6 +26,12 @@
     margin-left: 10px;
     margin-top: 12px;
   }
+ @media (min-width: 768px){
+    .footer { 
+       position: fixed;
+    bottom: -60px;
+    left: 0;
+    }
 
   @media (min-width: 425px){
     .titulo-header { 
