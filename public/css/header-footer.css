@@ -37,5 +37,9 @@
     .titulo-header { 
       margin-right: 40px !important;
     }
-   
+    .footer { 
+       position: fixed;
+    bottom: -60px;
+    left: 0;
+    }
   }
