@@ -54,3 +54,15 @@ body {
   text-decoration: none !important;
   color: white !important;
 }
+@media (max-height: 740px) {
+  /* Estilos para pantallas con una altura máxima de 667px */
+  .footer {
+     
+    display: none !important;
+  }
+
+.form-signin {
+       
+      margin-top: 65px !important;
+    }
+  }

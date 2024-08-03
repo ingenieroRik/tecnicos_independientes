@@ -80,3 +80,10 @@ footer {
     margin-top: 20px;
   }
 }
+@media (max-height: 740px) {
+  /* Estilos para pantallas con una altura máxima de 667px */
+  .footer {
+      position:relative !important;
+      margin-top: 25px;
+  }
+}
