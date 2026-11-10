@@ -45,13 +45,19 @@ app.use (mainRoutes);
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
 
- var mysql = require('mysql'); //<----- npm install mysql 
+ var mysql = require('mysql2'); //<----- npm install mysql 
 
 var conexion = mysql.createConnection({
     host: process.env.HOST,
     database: process.env.DATABASE,
+    port: process.env.PORT,
     user: process.env.USER_BD,
-    password: process.env.PASSWORD});
+    password: process.env.PASSWORD,
+    ssl: {
+    minVersion: 'TLSv1.2',
+    rejectUnauthorized: true
+    }
+    });
   
     try {
         conexion.connect(function (error) {
