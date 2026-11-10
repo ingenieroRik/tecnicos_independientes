@@ -1,23 +1,23 @@
 module.exports = {
   "development": {
-    "username": "ingeniero_rik",
-    "password": "Montiel_2068",
-    "database": "base_datos_rik",
-    "host": "db4free.net",
+    "username": "3Pb5BoGrSGYjndC.root",
+    "password": "FRsx8jtKCQUDUfdm",
+    "database": "tec_i_falals_db",
+    "host": "gateway01.sa-east-1.prod.aws.tidbcloud.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "ingeniero_rik",
-    "password": "Montiel_2068",
-    "database": "base_datos_rik",
-    "host": "db4free.net",
+    "username": "3Pb5BoGrSGYjndC.root",
+    "password": "FRsx8jtKCQUDUfdm",
+    "database": "tec_i_falals_db",
+    "host": "gateway01.sa-east-1.prod.aws.tidbcloud.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "ingeniero_rik",
-    "password": "Montiel_2068",
-    "database": "base_datos_rik",
-    "host": "db4free.net",
+   "username": "3Pb5BoGrSGYjndC.root",
+    "password": "FRsx8jtKCQUDUfdm",
+    "database": "tec_i_falals_db",
+    "host": "gateway01.sa-east-1.prod.aws.tidbcloud.com",
     "dialect": "mysql"
   }
 }
