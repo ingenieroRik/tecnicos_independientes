@@ -207,7 +207,7 @@ const mainControllers = {
     }
       } ,
 /* *************************************************************************************************************************** */
-      login: async (req,res) => {
+    /*  login: async (req,res) => {
                 try {
         // en adminLogueado tengo los datos de la persona que se logueo con email y
         // contraseña, puede ser el administrador o un usuario, si es el administrador
@@ -253,6 +253,53 @@ const mainControllers = {
          return res.render("pages/login.ejs", { error: "No se puede conectar con la base de datos" });
     }
   } ,
+   */
+
+/* login nuevo de gemini  ******************************************************************************* */
+   login: async (req,res) => {
+        try {
+            var fallasTodas = await db.Fallas.findAll();
+                       
+            const { email, clave } = req.body;
+
+            if (!email || !clave) {
+                return res.render("pages/login.ejs", { error: "Por favor, complete todos los campos." });
+            }
+
+            // Usamos await para que el try...catch proteja la consulta correctamente
+            const usuario = await db.Usuarios.findOne({
+                where: { email: email },
+                raw: true,
+            });
+    
+            if (usuario == null) {    
+                return res.render("pages/login.ejs", { error: "Credenciales incorrectas. Por favor, intente de nuevo." });
+            }
+            
+            if (usuario.clave == clave && usuario.email == email) {
+                const usuarioLogueado = req.body;
+                req.session.usuarioLogueado = usuarioLogueado;
+                
+                return res.render('pages/lista-fotos.ejs', { fotos: fallasTodas });             
+            } else {
+                return res.render("pages/login.ejs", { error: "Credenciales incorrectas. Por favor, intente de nuevo." });
+            }
+
+        } catch (error) {
+            // Esto imprimirá el error real en los Logs de Render para que sepas exactamente qué pasó
+            console.error("ERROR REAL EN LOGIN:", error);
+            return res.render("pages/login.ejs", { error: "No se puede conectar con la base de datos" });
+        }
+      },
+
+
+
+
+
+
+
+
+
 /* ******************************************************************************************************************* */
       olvidoClave : (req, res) => {
 
