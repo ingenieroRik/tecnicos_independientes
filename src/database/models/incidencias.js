@@ -18,7 +18,7 @@ let alias = "Fallas";
     solucion:{type: DataTypes.STRING(1024), notNull: true},
    
     fecha: {type: DataTypes.STRING(12), notNull : true},
-    //email: {type: DataTypes.STRING(255), notNull: true},
+    email: {type: DataTypes.STRING(255), notNull: true},
         };
  let config =  {
     tableName : 'fallas',
