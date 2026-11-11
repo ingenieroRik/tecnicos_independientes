@@ -70,7 +70,7 @@ var conexion = mysql.createConnection({
             } else {
                 console.log("Conecto con éxito la base de datos remota");
                 // Perform any database operations here
-                conexion.end();
+                //conexion.end();
             }
         });
     
