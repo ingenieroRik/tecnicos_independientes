@@ -156,7 +156,7 @@ const adminControllers = {
                       falla: req.body.falla,
                       solucion: req.body.solucion,
                       fecha: req.body.fecha,
-                      email: email,
+                      //email: email,
         })
         
         res.redirect('/verlista');
