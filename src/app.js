@@ -45,7 +45,7 @@ app.use (mainRoutes);
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
 
- var mysql = require('mysql2'); //<----- npm install mysql 
+ var mysql = require('mysql2'); //<----- npm install mysql2 
 
 var conexion = mysql.createConnection({
     host: process.env.HOST,
