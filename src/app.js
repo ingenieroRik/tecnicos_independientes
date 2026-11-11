@@ -52,8 +52,14 @@ var conexion = mysql.createConnection({
     database: process.env.DATABASE,
     port: process.env.PORT,
     user: process.env.USER_BD,
-    password: process.env.PASSWORD
-    
+    password: process.env.PASSWORD,
+    ssl: {
+        minVersion: 'TLSv1.2',
+        rejectUnauthorized: true
+    },
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
     });
   
     try {
