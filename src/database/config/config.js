@@ -1,10 +1,10 @@
 module.exports = {
   "development": {
-    "username": "3Pb5BoGrSGYjndC.root",
-    "password": "FRsx8jtKCQUDUfdm",
-    "database": "tec_i_fallas_db",
-    "host": "gateway01.sa-east-1.prod.aws.tidbcloud.com",
-    "port": 4000,
+    "username": process.env.USER_BD ,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
+    "port": process.env.PORT,
     "dialect": "mysql",
     "dialectOptions": {
       "ssl": {
@@ -14,11 +14,11 @@ module.exports = {
     }
   },
   "test": {
-    "username": "3Pb5BoGrSGYjndC.root",
-    "password": "FRsx8jtKCQUDUfdm",
-    "database": "tec_i_fallas_db",
-    "host": "gateway01.sa-east-1.prod.aws.tidbcloud.com",
-    "port": 4000,
+    "username": process.env.USER_BD,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
+    "port": process.env.PORT,
     "dialect": "mysql",
     "dialectOptions": {
       "ssl": {
@@ -28,11 +28,11 @@ module.exports = {
     }
   },
   "production": {
-    "username": "3Pb5BoGrSGYjndC.root",
-    "password": "FRsx8jtKCQUDUfdm",
-    "database": "tec_i_fallas_db",
-    "host": "gateway01.sa-east-1.prod.aws.tidbcloud.com",
-    "port": 4000,
+    "username": process.env.USER_BD,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
+    "port": process.env.PORT,
     "dialect": "mysql",
     "dialectOptions": {
       "ssl": {
